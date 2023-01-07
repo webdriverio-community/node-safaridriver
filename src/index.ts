@@ -3,7 +3,7 @@ import cp, { type ChildProcess } from 'node:child_process'
 export const DEFAULT_PATH = '/usr/bin/safaridriver'
 export const DEFAULT_PORT = 4444
 
-interface SafaridriverOptions {
+export interface SafaridriverOptions {
     /**
      * Specifies the port on which the HTTP server should listen for incoming connections.
      * If the port is already in use or otherwise unavailable, Safaridriver will exit

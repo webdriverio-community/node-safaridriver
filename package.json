@@ -43,7 +43,7 @@
       "./dist/cjs/index.js"
     ]
   },
-  "types": "./build/index.d.ts",
+  "types": "./dist/index.d.ts",
   "typeScriptVersion": "3.8.3",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.0",
