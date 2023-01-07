@@ -58,3 +58,7 @@ Enables diagnostic logging for all sessions hosted by this safaridriver instance
 
 __Type:__ `boolean`<br />
 __Default:__ `false`
+
+----
+
+For more information on WebdriverIO see the [homepage](http://webdriver.io).
