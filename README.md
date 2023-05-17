@@ -1,4 +1,4 @@
-# Safaridriver for Node.js
+# Safaridriver for Node.js [![CI](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/ci.yml/badge.svg)](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/ci.yml) [![Audit](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/audit.yml/badge.svg)](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/audit.yml)
 
 > A Node.js untility to manage Safaridriver sessions.
 
