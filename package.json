@@ -1,6 +1,6 @@
 {
   "name": "safaridriver",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "author": "Christian Bromann <mail@bromann.dev>",
   "license": "MIT",
   "description": "An NPM wrapper for handling the Safaridriver binary.",
