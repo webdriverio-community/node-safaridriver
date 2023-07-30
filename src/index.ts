@@ -1,4 +1,4 @@
-import fs from 'node:fs/promises'
+import fs from 'node:fs'
 import cp, { type ChildProcess } from 'node:child_process'
 
 export const DEFAULT_PATH = '/usr/bin/safaridriver'
@@ -42,7 +42,7 @@ export interface SafaridriverOptions {
 
 let instance: ChildProcess
 let instanceOptions: SafaridriverOptions
-export const start = async (options: SafaridriverOptions = {}) => {
+export const start = (options: SafaridriverOptions = {}) => {
     const port = typeof options.port === 'number' ? options.port : DEFAULT_PORT
     const args: string[] = [`--port=${port}`]
     const driverPath = options.path || (
@@ -51,7 +51,7 @@ export const start = async (options: SafaridriverOptions = {}) => {
             : DEFAULT_PATH
     )
 
-    const isSTPInstalled = options.useTechnologyPreview && await fs.access(DEFAULT_STP_PATH).then(() => true, () => false)
+    const isSTPInstalled = options.useTechnologyPreview && fs.existsSync(DEFAULT_STP_PATH)
     if (options.useTechnologyPreview && !isSTPInstalled) {
         throw new Error(
             'Safari Technology Preview is not installed! Please go to ' +
