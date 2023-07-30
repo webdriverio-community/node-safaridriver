@@ -1,6 +1,8 @@
+import fs from 'node:fs/promises'
 import cp, { type ChildProcess } from 'node:child_process'
 
 export const DEFAULT_PATH = '/usr/bin/safaridriver'
+export const DEFAULT_STP_PATH = '/Applications/Safari Technology Preview.app/Contents/MacOS/safaridriver'
 export const DEFAULT_PORT = 4444
 
 export interface SafaridriverOptions {
@@ -32,14 +34,30 @@ export interface SafaridriverOptions {
      * @default false
      */
     diagnose?: boolean
+    /**
+     * If enabled, it starts the Safaridriver binary from the Safari Technology Preview app.
+     */
+    useTechnologyPreview?: boolean
 }
 
 let instance: ChildProcess
 let instanceOptions: SafaridriverOptions
-export const start = (options: SafaridriverOptions = {}) => {
+export const start = async (options: SafaridriverOptions = {}) => {
     const port = typeof options.port === 'number' ? options.port : DEFAULT_PORT
     const args: string[] = [`--port=${port}`]
-    const driverPath = options.path || DEFAULT_PATH
+    const driverPath = options.path || (
+        options.useTechnologyPreview
+            ? DEFAULT_STP_PATH
+            : DEFAULT_PATH
+    )
+
+    const isSTPInstalled = options.useTechnologyPreview && await fs.access(DEFAULT_STP_PATH).then(() => true, () => false)
+    if (options.useTechnologyPreview && !isSTPInstalled) {
+        throw new Error(
+            'Safari Technology Preview is not installed! Please go to ' +
+            'https://developer.apple.com/safari/technology-preview/ and install it.'
+        )
+    }
 
     if (options.enable) {
         args.push('--enable')

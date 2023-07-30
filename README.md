@@ -19,7 +19,7 @@ To start a Safaridriver server, import the package and run:
 ```js
 import safaridriver from 'safaridriver'
 
-safaridriver.start()
+await safaridriver.start()
 
 // run some automation...
 
@@ -42,6 +42,13 @@ Path to Safaridriver binary.
 
 __Type:__ `string`<br />
 __Default:__ `/usr/bin/safaridriver`
+
+### `useTechnologyPreview`
+
+If set to `true`, it will start the Safaridriver for Safari Technology Preview. Make sure you have it installed by installing Safari Technology Preview on Apple's [offical website](https://developer.apple.com/safari/technology-preview/).
+
+__Type:__ `boolean`<br />
+__Default:__ `false`
 
 ### `enable`
 
