@@ -17,8 +17,7 @@
     "noImplicitAny": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
-    "checkJs": true,
-    "types": ["node"]
+    "checkJs": true
   },
   "include": ["src/**/*", "src/cjs/package.json"],
   "ignore": ["node_modules", "dist"]
