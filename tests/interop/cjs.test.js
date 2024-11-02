@@ -1,5 +1,4 @@
 const assert = require('node:assert')
-// eslint-disable-next-line
 const driver = require('../..')
 
 console.log('Start CJS tests')
