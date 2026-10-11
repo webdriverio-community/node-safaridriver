@@ -1,4 +1,15 @@
-# Safaridriver for Node.js [![CI](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/ci.yml/badge.svg)](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/ci.yml) [![Audit](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/audit.yml/badge.svg)](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/audit.yml)
+> [!IMPORTANT]
+> **This repository is not maintained anymore.** The `safaridriver` package moved to
+> [`webdriverio/driver`](https://github.com/webdriverio/driver/tree/main/packages/node-safaridriver).
+> Version 2.0.0 and later are released from there.
+>
+> - The npm package name does not change: `npm install safaridriver`.
+> - Open issues and pull requests in [`webdriverio/driver`](https://github.com/webdriverio/driver/issues).
+> - To upgrade, read [Upgrading to geckodriver 8, edgedriver 8 and safaridriver 3](https://github.com/webdriverio/driver#upgrading-to-geckodriver-8-edgedriver-8-and-safaridriver-3).
+>
+> The code in this repository is for version 1.x and older.
+
+# Safaridriver for Node.js [![CI](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/ci.yml/badge.svg)](https://github.com/webdriverio-community/node-safaridriver/actions/workflows/ci.yml)
 
 > A Node.js untility to manage Safaridriver sessions.
 
